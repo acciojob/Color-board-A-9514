@@ -1,16 +1,50 @@
-<!DOCTYPE html>
-
-<html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+	<style>
+	    /* Refer to code.css */
+	</style>
+	<script>
+	    /* Refer to code.js */
+	</script>
 </head>
-
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
+<body onload="createCanvas()">
+	<ul id="navbar">
+		<li>
+			<a href="http://0.0.0.0:8080/">
+				<div id="link">
+					Home
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="http://0.0.0.0:8080/cookie">
+				<div id="link">
+					Cookie Clicker
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="http://0.0.0.0:8080/draw">
+				<div id="link">
+					Drawing Board
+				</div>
+			</a>
+		</li>
+	</ul>
+	<div id="picker">
+		<form id="colorpick">
+			Choose Your Color: <input type="color"><br>
+		</form>
+		<form id="optionpick">
+			<input type="checkbox" name="opt">Eraser
+			<input type="checkbox" name="opt">Full Background
+			<input type="checkbox" name="getcol">Get Color
+		</form>
+		<form id="sizepick">
+			1<input type="range" name="points" min="1" max="20" value="10" onchange="getSize()">20 
+		</form>
+		<button onclick="changeSize()"></button>
+		Size = <span id="sizenum">10</span>
+	</div>
+	<br>
+	<table id="board" style="border: 1px solid black"></table>
 </body>
-
-</html>

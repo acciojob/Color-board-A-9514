@@ -1,1 +1,24 @@
 /*  your css code here. If applicable */
+.drawn {
+	width:10px; 
+	height:10px;
+}
+
+#picker {
+	display: block;
+	background-color: #BEF781;
+	width: 200px;
+	height: 150px;
+	border: 2px dashed black;
+	padding: 9px 5px 5px 10px;
+}
+
+#board {
+	background-color: white;
+	border-spacing: 0px;
+	border-collapse: separate;
+}
+
+span {
+	color:red;
+}
