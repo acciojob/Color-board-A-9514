@@ -1,24 +1,25 @@
 /*  your css code here. If applicable */
-.drawn {
-	width:10px; 
-	height:10px;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-#picker {
-	display: block;
-	background-color: #BEF781;
-	width: 200px;
-	height: 150px;
-	border: 2px dashed black;
-	padding: 9px 5px 5px 10px;
+.container {
+  display: grid;
+  grid-template-columns: repeat(20, 40px);
+  gap: 5px;
 }
 
-#board {
-	background-color: white;
-	border-spacing: 0px;
-	border-collapse: separate;
+.square {
+  width: 40px;
+  height: 40px;
+  background-color: lightgray;
+  transition: background-color 1s ease;
 }
 
-span {
-	color:red;
+.square:hover {
+  background-color: #3498db;
 }
