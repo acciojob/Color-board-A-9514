@@ -1,25 +1,39 @@
 /*  your css code here. If applicable */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+.container{
+    position: relative;
+    top: 50px;
+    width: 100%;
+    background-color: black;
 }
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(20, 40px);
-  gap: 5px;
+.pad{
+    padding: 30px 20px;
+    position: relative;
+    width: 60%;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(50,auto);
+    border: 1px solid black;
+    gap:2px;
 }
-
-.square {
-  width: 40px;
-  height: 40px;
-  background-color: lightgray;
-  transition: background-color 1s ease;
+.container .pad .square{
+    background-color: rgb(29, 29, 29);
+    width: 29px;
+    height: 29px;
+    transition: 1s;
 }
+.container .pad .square:hover{
+    background-color: greenyellow;
+}
+@media screen and (width<1200px) {
+    .container{
+        width: auto;
+    }
+    .pad{
+        width: auto;
+    }
+    .container .pad .square{
+        width: auto;
+        height: auto;
+    }
 
-.square:hover {
-  background-color: #3498db;
 }
