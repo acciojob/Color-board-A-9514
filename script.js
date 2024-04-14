@@ -1,33 +1,18 @@
-//your JS code here. If required.
-document.addEventListener("DOMContentLoaded", function () {
-  const colorBoard = document.getElementById("colorBoard");
 
-  // Create 800 squares dynamically
-  for (let i = 0; i < 800; i++) {
-    const square = document.createElement("div");
-    square.classList.add("square");
-    
-    // Attach event listener to each square
-    square.addEventListener("mouseover", function () {
-      // Change background color on hover
-      square.style.backgroundColor = getRandomColor();
-      
-      // Reset color after 1 second
-      setTimeout(() => {
-        square.style.backgroundColor = "black";
-      }, 1000);
-    });
+const express = require('express');
+const path = require('path');
 
-    colorBoard.appendChild(square);
-  }
+const app = express();
 
-  // Function to generate a random color
-  function getRandomColor() {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
+app.use(express.static(__dirname))
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname + '/main.html'));
 });
+//your code here
+app.post('/add', (req, res) => {
+  const {a,b} = req.body;
+  res.status(200).send(a+b);
+  // res.sendFile(path.join(__dirname + '/main.html'));
+});
+module.exports = app;
